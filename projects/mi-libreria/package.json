@@ -13,5 +13,13 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
+  "keywords": [
+    "angular",
+    "components",
+    "ui-kit",
+    "ngx",
+    "aespartal",
+    "atomic-design"
+  ],
   "sideEffects": false
 }

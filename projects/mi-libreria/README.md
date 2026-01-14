@@ -1,63 +1,62 @@
-# MiLibreria
+# 🚀 ngx-aespartal-ui
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
+A professional, lightweight, and customizable Angular component library built with Atomic Design principles.
 
-## Code scaffolding
+[![npm version](https://badge.fury.io/js/@aespartal%2Fmi-libreria.svg)](https://www.npmjs.com/package/@aespartal/mi-libreria)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## ✨ Features
+- **Atomic Design**: Built from basic atoms to complex molecules.
+- **Customizable**: Easy theming using CSS Variables.
+- **Standalone**: Ready for modern Angular (v17+).
+- **Accessible**: Built with accessibility in mind.
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the library, run:
+## 📦 Installation
 
 ```bash
-ng build mi-libreria
+npm install @aespartal/mi-libreria
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+## 🛠 Usage
 
-### Publishing the Library
+### 1. Import the component
 
-Once the project is built, you can publish your library by following these steps:
+In your standalone component or module:
 
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/mi-libreria
-   ```
+```typescript
+import { AtomButton } from '@aespartal/mi-libreria';
 
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [AtomButton],
+  template: `
+    <lib-atom-button 
+      label="Click Me" 
+      variant="solid" 
+      (clicked)="handleEvent($event)">
+    </lib-atom-button>
+  `
+})
+export class AppComponent { }
 ```
 
-## Running end-to-end tests
+### 2. Theming (Custom Colors)
 
-For end-to-end (e2e) testing, run:
+You can easily change the primary color of the library by overriding the CSS variables in your `styles.css`:
 
-```bash
-ng e2e
+```css
+:root {
+  --lib-primary-color: #ff5722; /* Your brand color */
+}
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🎨 Components Available
 
-## Additional Resources
+- [x] **AtomButton**: Versatile button with solid and outline variants, plus icon support.
+- [ ] **AtomInput**: (Coming soon...)
+- [ ] **AtomBadge**: (Coming soon...)
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📄 License
+
+MIT © Aespartal
