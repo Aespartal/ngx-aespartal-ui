@@ -1,23 +1,27 @@
 :host {
-  /* Paleta extendida para mayor control */
-  --btn-primary: var(--lib-primary-color, #ff5722);
-  --btn-primary-hover: var(--lib-primary-hover, #e64a19);
+  --btn-primary: var(--aes-primary-color, #ff5722);
+  --btn-primary-hover: var(--aes-primary-hover, color-mix(in srgb, var(--btn-primary), black 10%));
+
+  --btn-font: var(--aes-font-family, 'Inter', system-ui, sans-serif);
+  --btn-radius: var(--aes-border-radius, 6px);
   --btn-text: #ffffff;
-  --btn-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --btn-transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.2s ease;
+
   --btn-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --btn-shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
   display: inline-block;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--btn-font);
 }
 
 .lib-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 0.5em;
   padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+  border-radius: var(--btn-radius);
   border: 1px solid transparent;
   cursor: pointer;
   font-weight: 600;
@@ -25,53 +29,68 @@
   line-height: 1.25rem;
   transition: var(--btn-transition);
   box-shadow: var(--btn-shadow);
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+
+  backface-visibility: hidden;
+  user-select: none;
 }
 
 .lib-button-solid {
   background-color: var(--btn-primary);
   color: var(--btn-text);
+  border-color: var(--btn-primary);
 }
 
 .lib-button-solid:hover:not(:disabled) {
   background-color: var(--btn-primary-hover);
+  border-color: var(--btn-primary-hover);
   box-shadow: var(--btn-shadow-hover);
   transform: translateY(-1px);
 }
 
 .lib-button-outline {
   background-color: transparent;
-  border: 1.5px solid var(--btn-primary);
+  border: 1px solid var(--btn-primary);
   color: var(--btn-primary);
   box-shadow: none;
 }
 
 .lib-button-outline:hover:not(:disabled) {
-  background-color: rgba(255, 87, 34, 0.05);
+  background-color: color-mix(in srgb, var(--btn-primary), transparent 90%);
   border-color: var(--btn-primary-hover);
+  color: var(--btn-primary-hover);
 }
 
-/* Estado Focus (Vital para Accesibilidad Pro) */
 .lib-button:focus-visible {
-  outline-color: var(--btn-primary);
+  outline: 2px solid var(--btn-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--btn-primary), transparent 80%);
 }
 
-/* Estado Active */
 .lib-button:active:not(:disabled) {
   transform: translateY(0);
-  filter: brightness(0.9);
+  filter: brightness(0.95);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Estado Disabled (Más suave) */
 .lib-button:disabled {
   background-color: #f3f4f6;
   color: #9ca3af;
   border-color: #e5e7eb;
   box-shadow: none;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
-.lib-button-sm { padding: 0.4rem 0.8rem; font-size: 0.85rem; gap: 6px; }
-.lib-button-md { padding: 0.6rem 1.2rem; font-size: 0.95rem; gap: 8px; }
-.lib-button-lg { padding: 0.8rem 1.6rem; font-size: 1.1rem; gap: 12px; }
+/* === TAMAÑOS === */
+.lib-button-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+.lib-button-md {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+}
+.lib-button-lg {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
+}
