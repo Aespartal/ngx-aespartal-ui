@@ -1,0 +1,54 @@
+:host {
+  --btn-bg: var(--lib-primary-color, #3b82f6);
+  --btn-color: #ffffff;
+  --btn-padding: 0.5rem 1rem;
+  --btn-radius: 4px;
+  display: inline-block;
+}
+
+.lib-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  border: none;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 500;
+  transition: filter 0.2s ease, transform 0.1s active;
+}
+
+.lib-button__icon-left:empty,
+.lib-button__icon-right:empty {
+  display: none;
+}
+
+.lib-button:hover {
+  filter: brightness(90%);
+}
+
+.lib-button:active {
+  transform: scale(0.98);
+}
+
+.lib-button:disabled {
+  background-color: #d1d5db;
+  cursor: not-allowed;
+}
+
+.lib-button-outline {
+  background-color: transparent;
+  border: 2px solid var(--btn-bg);
+  color: var(--btn-bg);
+}
+
+::ng-content svg,
+::ng-content i {
+  width: 1.2em;
+  height: 1.2em;
+  display: block;
+}

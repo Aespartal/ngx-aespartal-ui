@@ -6,5 +6,61 @@
   },
   "newProjectRoot": "projects",
   "projects": {
+    "mi-libreria": {
+      "projectType": "library",
+      "root": "projects/mi-libreria",
+      "sourceRoot": "projects/mi-libreria/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mi-libreria/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/mi-libreria/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/mi-libreria/tsconfig.spec.json"
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/mi-libreria/.storybook",
+            "browserTarget": "mi-libreria:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/mi-libreria"
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/mi-libreria/.storybook",
+            "browserTarget": "mi-libreria:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/mi-libreria"
+            ],
+            "outputDir": "storybook-static"
+          }
+        }
+      }
+    }
   }
 }
