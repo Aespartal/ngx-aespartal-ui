@@ -1,19 +1,19 @@
-# 🎨 Mi Libreria - Angular Component Library
+# 🚀 ngx-aespartal-ui
 
-[![npm version](https://img.shields.io/npm/v/mi-libreria.svg)](https://www.npmjs.com/package/mi-libreria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+A professional, lightweight, and customizable Angular component library built with Atomic Design principles.
+
+[![npm version](https://badge.fury.io/js/@aespartal%2Fmi-libreria.svg)](https://www.npmjs.com/package/@aespartal/mi-libreria)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Angular](https://img.shields.io/badge/Angular-21.0.0-dd0031.svg)](https://angular.io/)
-
-A modern, lightweight, and customizable Angular component library built with standalone components. Designed for flexibility and ease of use.
 
 ## ✨ Features
 
 - 🚀 **Standalone Components** - No NgModule required
 - 🎨 **Fully Customizable** - CSS Variables for theming
+- ⚛️ **Atomic Design** - Built from basic atoms to complex molecules
 - ♿ **Accessible** - ARIA attributes included
 - 📦 **Tree-shakeable** - Import only what you need
 - 💪 **TypeScript** - Full type safety
-- 🔧 **Framework Agnostic Styling** - Use your own design system
 
 ---
 
@@ -22,13 +22,7 @@ A modern, lightweight, and customizable Angular component library built with sta
 Install the library via npm:
 
 ```bash
-npm install mi-libreria
-```
-
-Or using yarn:
-
-```bash
-yarn add mi-libreria
+npm install @aespartal/mi-libreria
 ```
 
 ---
@@ -41,7 +35,7 @@ Import the component directly in your component or standalone app:
 
 ```typescript
 import { Component } from '@angular/core';
-import { AtomButton } from 'mi-libreria';
+import { AtomButton } from '@aespartal/mi-libreria';
 
 @Component({
   selector: 'app-root',
@@ -65,7 +59,7 @@ export class AppComponent {
 
 ```typescript
 import { NgModule } from '@angular/core';
-import { AtomButton } from 'mi-libreria';
+import { AtomButton } from '@aespartal/mi-libreria';
 
 @NgModule({
   imports: [AtomButton],
@@ -150,7 +144,7 @@ export class AppModule { }
 
 ```typescript
 import { Component } from '@angular/core';
-import { AtomButton } from 'mi-libreria';
+import { AtomButton } from '@aespartal/mi-libreria';
 
 @Component({
   selector: 'app-demo',
@@ -237,8 +231,8 @@ The `AtomButton` component is fully customizable through CSS Variables. This all
 
 | Variable              | Default Value | Description                    |
 |-----------------------|---------------|--------------------------------|
-| `--lib-primary-color` | `#3b82f6`     | Primary color for solid buttons|
-| `--btn-bg`            | `var(--lib-primary-color)` | Button background color |
+| `--aes-primary-color` | `#3b82f6`     | Primary color for solid buttons|
+| `--btn-bg`            | `var(--aes-primary-color)` | Button background color |
 | `--btn-color`         | `#ffffff`     | Button text color              |
 | `--btn-padding`       | `0.5rem 1rem` | Button padding                 |
 | `--btn-radius`        | `4px`         | Button border radius           |
@@ -251,7 +245,7 @@ Set CSS Variables globally in your `styles.css` or `styles.scss`:
 
 ```css
 :root {
-  --lib-primary-color: #10b981;  /* Green theme */
+  --aes-primary-color: #10b981;  /* Green theme */
 }
 ```
 
@@ -299,7 +293,7 @@ Override variables for specific instances:
 ```css
 @media (prefers-color-scheme: dark) {
   :root {
-    --lib-primary-color: #60a5fa;
+    --aes-primary-color: #60a5fa;
   }
 }
 ```
@@ -369,13 +363,14 @@ If you have any questions or need help, please open an issue in the GitHub repos
 
 ## 🗺️ Roadmap
 
-- [ ] Additional atomic components (inputs, checkboxes, etc.)
+- [x] **AtomButton**: Versatile button with solid and outline variants, plus icon support.
+- [x] **AtomBadge**: Stylish badge for notifications and labels.
+- [ ] **AtomInput**: (Coming soon...)
 - [ ] More button variants (ghost, link, etc.)
 - [ ] Size variants (small, medium, large)
 - [ ] Loading state support
-- [ ] Icon component integration
 - [ ] Full accessibility audit
 
 ---
 
-**Made with ❤️ by the Mi Libreria team**
+**Made with ❤️ by Aespartal**

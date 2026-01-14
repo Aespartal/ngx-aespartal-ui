@@ -47,15 +47,15 @@ You can easily change the primary color of the library by overriding the CSS var
 
 ```css
 :root {
-  --lib-primary-color: #ff5722; /* Your brand color */
+  --aes-primary-color: #ff5722; /* Your brand color */
 }
 ```
 
 ## 🎨 Components Available
 
 - [x] **AtomButton**: Versatile button with solid and outline variants, plus icon support.
+- [x] **AtomBadge**: Stylish badge for notifications and labels. 
 - [ ] **AtomInput**: (Coming soon...)
-- [ ] **AtomBadge**: (Coming soon...)
 
 ## 📄 License
 
