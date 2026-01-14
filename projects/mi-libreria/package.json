@@ -1,6 +1,6 @@
 {
   "name": "@aespartal/mi-libreria",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "author": {
     "name": "Alejandro Espartal",
     "email": "espartal94@gmail.com"
@@ -19,7 +19,9 @@
     "ui-kit",
     "ngx",
     "aespartal",
-    "atomic-design"
+    "atomic-design",
+    "badge",
+    "customizable"
   ],
   "sideEffects": false
 }

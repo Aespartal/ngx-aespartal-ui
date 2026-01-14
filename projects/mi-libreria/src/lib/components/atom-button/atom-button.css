@@ -1,54 +1,77 @@
 :host {
-  --btn-bg: var(--lib-primary-color, #3b82f6);
-  --btn-color: #ffffff;
-  --btn-padding: 0.5rem 1rem;
-  --btn-radius: 4px;
+  /* Paleta extendida para mayor control */
+  --btn-primary: var(--lib-primary-color, #ff5722);
+  --btn-primary-hover: var(--lib-primary-hover, #e64a19);
+  --btn-text: #ffffff;
+  --btn-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --btn-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --btn-shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
   display: inline-block;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .lib-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  background-color: var(--btn-bg);
-  color: var(--btn-color);
-  padding: var(--btn-padding);
-  border-radius: var(--btn-radius);
-  border: none;
+  gap: 10px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
   cursor: pointer;
-  font-family: sans-serif;
-  font-weight: 500;
-  transition: filter 0.2s ease, transform 0.1s active;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.25rem;
+  transition: var(--btn-transition);
+  box-shadow: var(--btn-shadow);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
-.lib-button__icon-left:empty,
-.lib-button__icon-right:empty {
-  display: none;
+.lib-button-solid {
+  background-color: var(--btn-primary);
+  color: var(--btn-text);
 }
 
-.lib-button:hover {
-  filter: brightness(90%);
-}
-
-.lib-button:active {
-  transform: scale(0.98);
-}
-
-.lib-button:disabled {
-  background-color: #d1d5db;
-  cursor: not-allowed;
+.lib-button-solid:hover:not(:disabled) {
+  background-color: var(--btn-primary-hover);
+  box-shadow: var(--btn-shadow-hover);
+  transform: translateY(-1px);
 }
 
 .lib-button-outline {
   background-color: transparent;
-  border: 2px solid var(--btn-bg);
-  color: var(--btn-bg);
+  border: 1.5px solid var(--btn-primary);
+  color: var(--btn-primary);
+  box-shadow: none;
 }
 
-::ng-content svg,
-::ng-content i {
-  width: 1.2em;
-  height: 1.2em;
-  display: block;
+.lib-button-outline:hover:not(:disabled) {
+  background-color: rgba(255, 87, 34, 0.05);
+  border-color: var(--btn-primary-hover);
 }
+
+/* Estado Focus (Vital para Accesibilidad Pro) */
+.lib-button:focus-visible {
+  outline-color: var(--btn-primary);
+}
+
+/* Estado Active */
+.lib-button:active:not(:disabled) {
+  transform: translateY(0);
+  filter: brightness(0.9);
+}
+
+/* Estado Disabled (Más suave) */
+.lib-button:disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  border-color: #e5e7eb;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.lib-button-sm { padding: 0.4rem 0.8rem; font-size: 0.85rem; gap: 6px; }
+.lib-button-md { padding: 0.6rem 1.2rem; font-size: 0.95rem; gap: 8px; }
+.lib-button-lg { padding: 0.8rem 1.6rem; font-size: 1.1rem; gap: 12px; }

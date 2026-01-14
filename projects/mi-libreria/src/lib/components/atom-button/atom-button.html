@@ -1,17 +1,21 @@
 <button
   [type]="type"
   [disabled]="disabled"
-  [class]="'lib-button lib-button-' + variant"
+  [class]="['lib-button', 'lib-button-' + variant, 'lib-button-' + size]"
   (click)="onBtnClick($event)"
   [attr.aria-label]="label"
 >
-  <span class="lib-button__icon-left">
-    <ng-content select="[leftIcon]"></ng-content>
-  </span>
+  @if (leftIcon()) {
+    <span class="lib-button__icon">
+      <ng-content select="[leftIcon]"></ng-content>
+    </span>
+  }
 
   <span class="lib-button__label">{{ label }}</span>
 
-  <span class="lib-button__icon-right">
-    <ng-content select="[rightIcon]"></ng-content>
-  </span>
+  @if (rightIcon()) {
+    <span class="lib-button__icon">
+      <ng-content select="[rightIcon]"></ng-content>
+    </span>
+  }
 </button>

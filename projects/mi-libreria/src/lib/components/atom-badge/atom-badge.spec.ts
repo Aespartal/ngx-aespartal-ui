@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MiLibreria } from './mi-libreria';
+import { AtomBadge } from './atom-badge';
 
-describe('MiLibreria', () => {
-  let component: MiLibreria;
-  let fixture: ComponentFixture<MiLibreria>;
+describe('AtomBadge', () => {
+  let component: AtomBadge;
+  let fixture: ComponentFixture<AtomBadge>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MiLibreria]
+      imports: [AtomBadge]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MiLibreria);
+    fixture = TestBed.createComponent(AtomBadge);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
